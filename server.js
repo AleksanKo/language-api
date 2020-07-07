@@ -18,6 +18,4 @@ app.post("/analyze", (req,res) => {
     res.send(processed(req.body.text))
 })
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+module.exports = app;
