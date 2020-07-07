@@ -1,0 +1,16 @@
+service: my-serverless-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 128
+  timeout: 10
+  stage: analyze
+  region: eu-central-1
+
+functions:
+  api:
+    handler: lambda.universal
+    events:
+      - http: ANY {proxy+}
+      - http: ANY /
